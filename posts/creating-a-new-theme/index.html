@@ -9,15 +9,15 @@ We&rsquo;ll start with creating a new site with a very basic template.">
 <meta property="og:description" content="Introduction #  This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
 We&rsquo;ll start with creating a new site with a very basic template.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://github.com/afacevedom/vc/posts/creating-a-new-theme/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://afacevedom.github.io/vc/posts/creating-a-new-theme/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2014-09-28T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-07-12T07:11:39-05:00">
 <title>Creating a New Theme | Visual Computing</title>
-<link rel=manifest href=/afacevedom/vc/manifest.json>
-<link rel=icon href=/afacevedom/vc/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/afacevedom/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
-<script defer src=/afacevedom/vc/flexsearch.min.js></script>
-<script defer src=/afacevedom/vc/en.search.min.bc1f2149a0599aaa6cbb7517405db42f64aa48e95df708f54f64597ffc432d06.js integrity="sha256-vB8hSaBZmqpsu3UXQF20L2SqSOld9wj1T2RZf/xDLQY=" crossorigin=anonymous></script>
+<link rel=manifest href=/vc/manifest.json>
+<link rel=icon href=/vc/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
+<script defer src=/vc/flexsearch.min.js></script>
+<script defer src=/vc/en.search.min.e98039ce67593c7b2d48e46bfc249ec35324f71ceb26166edcb184f94ab609a1.js integrity="sha256-6YA5zmdZPHstSORr/CSew1Mk9xzrJhZu3LGE+Uq2CaE=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -27,7 +27,7 @@ We&rsquo;ll start with creating a new site with a very basic template.">
 <div class=book-menu-content>
 <nav>
 <h2 class=book-brand>
-<a class="flex align-center" href=/afacevedom/vc/><span>Visual Computing</span>
+<a class="flex align-center" href=/vc/><span>Visual Computing</span>
 </a>
 </h2>
 <div class=book-search>
@@ -40,54 +40,54 @@ We&rsquo;ll start with creating a new site with a very basic template.">
 <span>Shortcodes</span>
 <ul>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/buttons/>Buttons</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/buttons/>Buttons</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/columns/>Columns</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/columns/>Columns</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/details/>Details</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/details/>Details</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/expand/>Expand</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/expand/>Expand</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/hints/>Hints</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/hints/>Hints</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/katex/>Katex</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/katex/>Katex</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/mermaid/>Mermaid</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/mermaid/>Mermaid</a>
 </li>
 <li>
 <input type=checkbox id=section-ec67a64aba70b9df3d2a9acd6c92e3bc class=toggle>
 <label for=section-ec67a64aba70b9df3d2a9acd6c92e3bc class="flex justify-between">
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/p5/>P5</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/p5/>P5</a>
 </label>
 <ul>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/p5/div/>Div</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/p5/div/>Div</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/p5/iframe/>Iframe</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/p5/iframe/>Iframe</a>
 </li>
 </ul>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/tabs/>Tabs</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/tabs/>Tabs</a>
 </li>
 <li>
 <input type=checkbox id=section-5e90dfc1cda674fda3ec0abb0b45bf6a class=toggle>
 <label for=section-5e90dfc1cda674fda3ec0abb0b45bf6a class="flex justify-between">
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/team/>Team</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/team/>Team</a>
 </label>
 <ul>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/team/cesar/>Cesar</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/team/cesar/>Cesar</a>
 </li>
 <li>
-<a href=https://github.com/afacevedom/vc/docs/shortcodes/team/iframe/>Iframe</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/team/iframe/>Iframe</a>
 </li>
 </ul>
 </li>
@@ -96,7 +96,7 @@ We&rsquo;ll start with creating a new site with a very basic template.">
 </ul>
 <ul>
 <li>
-<a href=/afacevedom/vc/posts/>
+<a href=/vc/posts/>
 Blog
 </a>
 </li>
@@ -109,11 +109,11 @@ Blog
 <header class=book-header>
 <div class="flex align-center justify-between">
 <label for=menu-control>
-<img src=/afacevedom/vc/svg/menu.svg class=book-icon alt=Menu>
+<img src=/vc/svg/menu.svg class=book-icon alt=Menu>
 </label>
 <strong>Creating a New Theme</strong>
 <label for=toc-control>
-<img src=/afacevedom/vc/svg/toc.svg class=book-icon alt="Table of Contents">
+<img src=/vc/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
@@ -185,7 +185,7 @@ Blog
 </header>
 <article class=markdown>
 <h1>
-<a href=/afacevedom/vc/posts/creating-a-new-theme/>Creating a New Theme</a>
+<a href=/vc/posts/creating-a-new-theme/>Creating a New Theme</a>
 </h1>
 <h5>September 28, 2014</h5>
 <h2 id=introduction>
@@ -1133,7 +1133,7 @@ Don&rsquo;t Repeat Yourself
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
 <div><a class="flex align-center" href=https://github.com/afacevedom/vc/commit/268ec346f0b648c6ded618232d67d8b43a1d58d6 title="Last modified by nakednous | July 12, 2021" target=_blank rel=noopener>
-<img src=/afacevedom/vc/svg/calendar.svg class=book-icon alt=Calendar>
+<img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>July 12, 2021</span>
 </a>
 </div>
