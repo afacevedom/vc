@@ -21,22 +21,30 @@ La ilusion consiste en un arreglo de tablero de ajedrez en donde las filas indiv
 ```js
 {{</* p5-global-iframe id="breath" width="625" height="625" >}}
   // Adaptado de [this](http://nrajansblog.blogspot.com/2018/05/cafe-wall-illusion-using-processing.html)
-  let update=0;
-
+ let update=0;
+var slider;
 function setup() {
-  createCanvas(700, 680);
+  createCanvas(810, 680);
   stroke(90, 90, 90);
-  strokeWeight(5);
+  strokeWeight(1);
   line(0,0, 200,200);
-  let lines=[]; 
+  slider = createSlider(0,50,3);
+  slider.size(200);
+  slider.position(10,10);
  
-  for(let i=0;i<8;i++){
-    line[i]=new Line(i*90);
-    //line[i].drawL(update);
-  }
 }
 
+
 function draw() {
+  stroke(255,255,255);
+  for(let i=0;i<8;i++){
+    line[i]=new Line(i*90);
+  }
+  stroke(90,90,90);
+  strokeWeight(slider.value());
+  for(let i=0;i<8;i++){
+    line[i]=new Line(i*90);
+  }
   for(let i=0;i<8;i++){
     if(i%2==0){
       line[i].drawL(-270+update);
@@ -74,23 +82,30 @@ class Line {
 {{< /details >}}
 
 {{< p5-global-iframe id="breath" width="725" height="725" >}}
-  let update=0;
-
+ let update=0;
+var slider;
 function setup() {
-  createCanvas(700, 680);
+  createCanvas(810, 680);
   stroke(90, 90, 90);
-  strokeWeight(5);
+  strokeWeight(1);
   line(0,0, 200,200);
-  let lines=[]; 
+  slider = createSlider(0,50,3);
+  slider.size(200);
+  slider.position(10,10);
  
-  for(let i=0;i<8;i++){
-    line[i]=new Line(i*90);
-    //line[i].drawL(update);
-  }
 }
 
 
 function draw() {
+  stroke(255,255,255);
+  for(let i=0;i<8;i++){
+    line[i]=new Line(i*90);
+  }
+  stroke(90,90,90);
+  strokeWeight(slider.value());
+  for(let i=0;i<8;i++){
+    line[i]=new Line(i*90);
+  }
   for(let i=0;i<8;i++){
     if(i%2==0){
       line[i].drawL(-270+update);
