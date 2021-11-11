@@ -2,7 +2,8 @@
 
 {{<columns>}}
 ## Bio
-Nacido en Boyacá, Estudiante de Ingeniería de Sistemas y Computacion con muchos años en la universidad T_T he pasado por varias universidades, he vivido fuera del país y ya casi logro mi objetivo de graduarme.
+Nacido en Boyacá, Estudiante de Ingeniería de Sistemas y Computacion, viví un año en Inglaterra una experiencia muy enriquecedora conociendo distintas culturas.
+  
 <--->
 ## Intereses
 Desarollo de software, la criptografía y la inteligencia artificial. Economía y politica. 
