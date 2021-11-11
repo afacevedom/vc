@@ -7,7 +7,7 @@ Welcome to the [UN / DISI](http://www.ingenieria.unal.edu.co/dependencias/depart
 Install the [gohugo](https://gohugo.io/) [static site generator](https://jamstack.org/generators/) then:
 
 ```sh
-$git clone https://github.com/VisualComputing/vc
+$git clone https://github.com/afacevedom/vc
 $cd vc
 $git submodule update --init --recursive
 $hugo server -D --disableFastRender
