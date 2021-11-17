@@ -2,14 +2,13 @@
 
 {{<columns>}}
 ## Bio
-Nacido en Boyacá, Estudiante de Ingeniería de Sistemas y Computacion, viví un año en Inglaterra una experiencia muy enriquecedora conociendo distintas culturas.
-  
+Nacido en Bogotá D.C. Colombia, se distingue por su curiosidad y determinación en conseguir lo que se propone. Disfruta de ayudar a las demás personas a conseguir sus propósitos, al mismo tiempo que trabaja por sus objetivos.
 <--->
 ## Intereses
-Desarollo de software, la criptografía y la inteligencia artificial. Economía y politica. 
+Inversiones en diferentes tipos de activos financieros. Creación de ideas para la solución de problemas sociales. Defensor de la libertad. Tiempo, salud y dinero son los tres recursos claves.
 <--->
 ## Hobbies
-Viajar, ir a cine y la fotografía. Me gusta aprender de todo y me gusta estar enterado de la actualidad.
+Ejercicio, natación, leer, escribir, inversiones y creación de valor mediante ideas de negocio.
 {{< /columns>}}
 
 ## Ilusión Visual
