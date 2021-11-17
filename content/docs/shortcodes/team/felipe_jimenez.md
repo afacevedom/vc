@@ -73,34 +73,45 @@ function draw() {
 {{< /details >}}
 
 {{< p5-global-iframe id="breath" width="725" height="725" >}}
-let update=0;
 let angle = 0;
 function setup() {
   createCanvas(700, 700);
-  strokeWeight(4)
 }
 
 function draw() {
   background(50);
-  noStroke();
-  fill(255,0,0)
-  ellipse(width/2, height/2, 10,10)
-  
-  for(let i = 15; i< 5000; i+=15)
-  {
-    push()
-    translate(width/2,height/2)
-    rotate(i+ angle * 2)
-    noFill()
-    stroke(20 , i * 100, i -100)
-    ellipse(0, 0, i + 15 , i )
-    
-    pop()
-    
-    angle += 0.0003
+  for (let i = 50; i < width - 45; i += 50) {
+    for (let j = 50; j < height - 45; j += 50) {
+
+      push()
+      fill(0, 168, 0);
+      stroke(0, 0, 150);
+      strokeWeight(3);
+      ellipse(i, j, 25, 25);
+      pop()
+
+      push()
+      translate(i, j);
+      rotate(HALF_PI + i - angle * 3)
+      stroke(0, 168, 168);
+      strokeWeight(3);
+      noFill();
+      arc(0, 0, 30, 30, 0, PI)
+      pop()
+
+      push()
+      translate(i, j);
+      rotate(QUARTER_PI * j + angle * 4)
+      stroke(0, 255, 255);
+      strokeWeight(3);
+      noFill();
+      arc(0, 0, 25, 25, PI , 0)
+      pop()
+
+      angle += 0.0005
+
+    }
   }
-  
-  
 }
 {{< /p5-global-iframe >}}
 
