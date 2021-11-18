@@ -11,9 +11,9 @@ Inversiones en diferentes tipos de activos financieros. Creación de ideas para 
 Ejercicio, natación, leer, escribir, inversiones y creación de valor mediante ideas de negocio.
 {{< /columns>}}
 
-## Ilusión Visual
-## Waterfall illusion
-La ilusión de la cascada, o efecto posterior al movimiento, es una ilusión de movimiento. Se experimenta después de observar un estímulo que se mueve en una dirección durante algún tiempo, y luego se mira una escena estacionaria. La escena inmóvil parece tener movimiento (en la dirección opuesta al estímulo en movimiento que se observó anteriormente).
+## Ilusión visual
+## Moving dots illusion
+La ilusión de los punto en movimiento, es una ilusión de movimiento. Se experimenta de manera simple desde cualquier punto donde se encuentre el espectador. Los puntos, en verdad están estáticos; sin embargo, giran entorno a cada uno dos circunferencias delgadas (ambas en sentido contrario). Lo anterior, produce que el espectador tenga la ilusión de los puntos moviéndose —algunas personas aseguran ver un tipo de oleaje.
 
 A los seres humanos les fascinan las ilusiones visuales, que se producen cuando hay un desajuste entre el patrón de luz que incide en la retina y lo que percibimos. Antes de que los libros, las películas e Internet permitieran compartir ampliamente las ilusiones, la gente estaba cautivada por las ilusiones en la naturaleza. De hecho, es aquí donde comienza la larga historia del estudio de las ilusiones. Tanto Aristóteles como Lucrecio describieron las ilusiones de movimiento tras la observación del agua que fluye.
 
@@ -27,7 +27,7 @@ Habiendo mirado fijamente durante unos segundos una parte concreta de la cascada
 {{< details title="Código" open=false >}}
 ```js
 {{</* p5-global-iframe id="breath" width="625" height="625" >}}
-  // Adaptado de (https://www.youtube.com/watch?v=xlPWCrjQsTE)
+  // Adaptado de (https://www.youtube.com/watch?v=BQbrx6V0jTs)
 let angle = 0;
 function setup() {
   createCanvas(700, 700);
@@ -115,11 +115,6 @@ function draw() {
 }
 {{< /p5-global-iframe >}}
 
-## Efecto posterior al movimiento
-Esta descripción del fenómeno contribuyó a estimular un torrente de investigación, y el efecto pasó a conocerse como la "ilusión de la cascada". Básicamente, después de mirar algo que se mueve en una dirección durante un tiempo, algo que está quieto parecerá moverse en la dirección opuesta.
-
-Addams no necesitaba una teoría para saber que se trataba de una ilusión: las rocas parecían inmóviles antes de mirar la cascada, pero parecían moverse hacia arriba después de haber mirado la cascada. Todo lo que se necesitaba era la creencia de que los objetos permanecen iguales a lo largo del tiempo, pero que la percepción de los mismos puede cambiar. Este movimiento ilusorio -que vemos quieto tras la observación del movimiento- se conoce como efecto posterior al movimiento.
-
 ## Referencias
 https://theconversation.com/waterfall-illusion-when-you-see-still-objects-move-and-what-it-tells-you-about-your-brain-113953
-https://www.illusionsindex.org/ir/waterfall-illusion
+https://gizmodo.com/moving-dots-optical-illusion-reveals-the-power-of-silen-5728804
