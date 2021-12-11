@@ -12,4 +12,5 @@ headless: true
 - [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
 - [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
 - [Team]({{< relref "/docs/shortcodes/team" >}})
+- [Workshops]({{< relref "/docs/shortcodes/workshops" >}})
 <br />
