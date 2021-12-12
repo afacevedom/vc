@@ -2,7 +2,15 @@
 Metodo para rasterizar lineas
 
 ## Algoritmo Basico
-Implemntacion del algoritmo para rectas en el octante ubicado debajo del eje x, por lo tanto, las rectas a rasterizar en este octante deben cumplir ciertas condiciones: ser dibujada de izquierda a derecha y tene una pendiente m tal que: 0>m>1.
+El algoritmo funciona de la siguiente manera, asumimos un pixel en la posicion {{< katex >}}P_1(x_1,y_1){{< /katex >}}, nos moveremos un pixel a la vez de forma horizontal hasta el punto final de la linea en  {{< katex >}}P_2(x_2,y_2){{< /katex >}}; cada paso que nos movemos en sentido del eje {{< katex >}}X{{< /katex >}} tendremos que escoger entre dos pixeles:
+-  {{< katex >}}(x_k+1,y_k){{< /katex >}}
+- {{< katex >}}(x_k+1,y_k+1){{< /katex >}}
+
+entonces podemos usar la distancia entre la recta y los puntos mencionados anterirmente para ver cual de los dos escogemos. Para eso usamos la ecuacion de la recta {{< katex >}}y=mx+b{{< /katex >}}. La derivacion del algoritmo se puede encontrar [aqui](https://getsetcg.blogspot.com/2018/10/bresenham-line-drawing-derivation.html) .
+{{< p5-div sketch="/vc/sketches/Bersenhbasic.js" >}}
+
+**Implementación del algoritmo** para rectas en el octante ubicado debajo del eje x, por lo tanto, las rectas a rasterizar en este octante deben cumplir ciertas condiciones: ser dibujada de izquierda a derecha y tener una pendiente m tal que: 0>m>1.
+
 {{< p5-global-iframe id="breath" width="850" height="500" >}}
 let Scale = 40;
 let l,g;
@@ -34,6 +42,13 @@ function setup() {
   let px2 =createP("X2:");
   px2.style('font-size', '16px');
   px2.position(250,10*Scale-5);
+    //----------------Controles---------------
+  let pcont =createP("flecha izquierda: raster; flecha derecha: pixeles");
+  pcont.style('font-size', '20px');
+  pcont.position(400,10*Scale-15);
+  let pcont2 =createP("flecha arriba: ambas; flecha abajo: linea");
+  pcont2.style('font-size', '20px');
+  pcont2.position(400,10*Scale+10);
 }
 
 
@@ -135,7 +150,6 @@ function Bresenham(line){
   
   for(let x=line.x;x<=line.x2;x++){
     //console.log("D="+D+"("+x+","+y+")");
-    console.log(dy/dx);
     if(rast===1){
       strokeWeight(5);
       stroke('red');
