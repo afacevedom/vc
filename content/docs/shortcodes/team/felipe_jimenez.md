@@ -8,7 +8,7 @@ Nacido en Bogotá D.C. Colombia, se distingue por su curiosidad y determinación
 Inversiones en diferentes tipos de activos financieros. Creación de ideas para la solución de problemas sociales. Defensor de la libertad. Tiempo, salud y dinero son los tres recursos claves.
 <--->
 ## Hobbies
-Ejercicio, natación, leer, escribir, inversiones y creación de valor mediante ideas de negocio.
+Ejercicio, natación, leer, escribir, inversiones y creación de valor mediante ideas de negocio con el fin mejorar colectivamente nuestro entorno.
 {{< /columns>}}
 
 ## Ilusión visual
