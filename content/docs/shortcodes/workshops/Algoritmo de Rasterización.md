@@ -9,6 +9,15 @@ El algoritmo funciona de la siguiente manera, asumimos un pixel en la posicion {
 entonces podemos usar la distancia entre la recta y los puntos mencionados anterirmente para ver cual de los dos escogemos. Para eso usamos la ecuacion de la recta {{< katex >}}y=mx+b{{< /katex >}}. La derivacion del algoritmo se puede encontrar [aqui](https://getsetcg.blogspot.com/2018/10/bresenham-line-drawing-derivation.html) .
 {{< p5-div sketch="/vc/sketches/Bersenhbasic.js" >}}
 
+
+## References
+[1] Charalambos Hernandez, J. P. (n.d.). Visual Computing. Visual Computing. Retrieved December 10, 2021, from https://visualcomputing.github.io/vc/docs/workshops/rendering/#tareas
+
+[2] Wikipedia contributors. (2021, August 11). Line drawing algorithm. Wikipedia. Retrieved December 11, 2021, from https://en.wikipedia.org/wiki/Line_drawing_algorithm
+
+[3] xWikipedia contributors. (2021b, November 22). Rasterisation. Wikipedia. Retrieved December 10, 2021, from https://en.wikipedia.org/wiki/Rasterisation#:%7E:text=Rasterization%20(or%20rasterisation)%20is%20the,which%20was%20represented%20via%20shapes).
+
+
 **Implementación del algoritmo** para rectas en el octante ubicado debajo del eje x, por lo tanto, las rectas a rasterizar en este octante deben cumplir ciertas condiciones: ser dibujada de izquierda a derecha y tener una pendiente m tal que: 0>m>1.
 
 {{< p5-global-iframe id="breath" width="850" height="500" >}}
@@ -196,4 +205,4 @@ function Inputx2(){
 
 [2] Wikipedia contributors. (2021, August 11). Line drawing algorithm. Wikipedia. Retrieved December 11, 2021, from https://en.wikipedia.org/wiki/Line_drawing_algorithm
 
-[3] Wikipedia contributors. (2021b, November 22). Rasterisation. Wikipedia. Retrieved December 10, 2021, from https://en.wikipedia.org/wiki/Rasterisation#:%7E:text=Rasterization%20(or%20rasterisation)%20is%20the,which%20was%20represented%20via%20shapes).
+[3] xWikipedia contributors. (2021b, November 22). Rasterisation. Wikipedia. Retrieved December 10, 2021, from https://en.wikipedia.org/wiki/Rasterisation#:%7E:text=Rasterization%20(or%20rasterisation)%20is%20the,which%20was%20represented%20via%20shapes).
