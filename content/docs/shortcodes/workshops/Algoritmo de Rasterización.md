@@ -256,6 +256,7 @@ function bresenham(xStart, yStart, xEnd, yEnd) {
   }
 }
 {{< /p5-global-iframe >}}
+Obetenido de [aqui](https://getsetcg.blogspot.com/2018/10/bresenham-line-drawing-derivation.html) .
 ## References
 [1] Charalambos Hernandez, J. P. (n.d.). Visual Computing. Visual Computing. Retrieved December 10, 2021, from https://visualcomputing.github.io/vc/docs/workshops/rendering/#tareas
 
