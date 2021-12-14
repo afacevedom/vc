@@ -188,8 +188,74 @@ function Inputy2(){
 function Inputx2(){
   x2 = this.value();
 }
+
+
 {{< /p5-global-iframe >}}
 
+
+## Algoritmo para todos los octantes
+{{< p5-global-iframe id="breath" width="670" height="510" >}}
+function setup() {
+createCanvas(640, 480);
+}
+
+
+function draw() {
+ background(255);
+  bresenham(320, 240, mouseX, mouseY);
+}
+
+function sign(i) {
+  if (i > 0) {
+    return 1;
+  } else if (i == 0) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+function bresenham(xStart, yStart, xEnd, yEnd) {
+  let x1 = xStart;
+  let y1 = yStart;
+  let x2 = xEnd;
+  let y2 = yEnd;
+  let ΔX = x2 - x1;
+  let ΔY = y2 - y1;
+  
+  if (Math.abs(ΔX) >= Math.abs(ΔY)) {
+    let e = Math.abs(ΔX) - 2 * Math.abs(ΔY);
+  
+    while (x1 != x2) {
+      //strokeWeight(10);
+      point(x1,y1);
+      
+      x1 = x1 + sign(ΔX);
+      
+      if (e > 0) {
+        e = e - 2 * Math.abs(ΔY);
+      } else {
+        y1 = y1 + sign(ΔY);
+        e = e + 2 * (Math.abs(ΔX) - Math.abs(ΔY));
+      }
+    }
+  } else {
+    let e = Math.abs(ΔY) - 2 * Math.abs(ΔX);
+  
+    while (y1 != y2) {
+      point(x1,y1);
+      
+      y1 = y1 + sign(ΔY);
+       if (e > 0) {
+        e = e - 2 * Math.abs(ΔX);
+      } else {
+        x1 = x1 + sign(ΔX);
+        e = e + 2 * (Math.abs(ΔY) - Math.abs(ΔX));
+      }
+    }    
+  }
+}
+{{< /p5-global-iframe >}}
 ## References
 [1] Charalambos Hernandez, J. P. (n.d.). Visual Computing. Visual Computing. Retrieved December 10, 2021, from https://visualcomputing.github.io/vc/docs/workshops/rendering/#tareas
 
