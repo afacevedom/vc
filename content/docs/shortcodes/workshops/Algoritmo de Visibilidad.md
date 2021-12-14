@@ -1,10 +1,10 @@
-# Algoritmo de visibilizacion (Z-Buffer)
+# Algoritmo de visibilización (Z-Buffer)
 Algoritmo Z-Buffer para el problema de visibilidad
 
 El problema de visibilidad es el problema de decidir cuales elementos de una escena son visibles y cuales se "esconden".
 
-## Definicion
-Es un tipo de buffer de datos usados en computacion grafica para representar informacion de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos.El almacenamiento en búfer Z fue descrito por primera vez en 1974 por Wolfgang Straßer en su tesis doctoral sobre algoritmos rápidos para renderizar objetos ocluidos. Una solución similar para determinar polígonos superpuestos es el algoritmo del pintor , que es capaz de manejar elementos de escena no opacos, aunque a costa de la eficiencia y los resultados incorrectos. 
+## Definición
+Es un tipo de buffer de datos usados en computación grafica para representar información de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos. El almacenamiento en búfer Z fue descrito por primera vez en 1974 por Wolfgang Straßer en su tesis doctoral sobre algoritmos rápidos para renderizar objetos ocluidos. Una solución similar para determinar polígonos superpuestos es el algoritmo del pintor, que es capaz de manejar elementos de escena no opacos, aunque a costa de la eficiencia y los resultados incorrectos.
 
 El búfer z tiene la misma estructura de datos interna que una imagen, es decir, una matriz 2d, con la única diferencia de que almacena un valor único para cada píxel de la pantalla en lugar de imágenes en color que usan 3 valores para crear color. Esto hace que el búfer z aparezca en blanco y negro porque no almacena información de color. El búfer tiene las mismas dimensiones que el búfer de pantalla para mantener la coherencia. 
 
@@ -13,10 +13,10 @@ El Z-buffer tiene la misma estructura de datos interna que una imagen, es decir,
 ## Usos
 El Z-buffer es una tecnología utilizada en casi todas las computadoras, portátiles y teléfonos móviles contemporáneos para realizar gráficos de computadora en 3D . El uso principal ahora es para videojuegos, que requieren un procesamiento rápido y preciso de escenas 3D. El Z-buffer se implementa en hardware dentro de las tarjetas gráficas. El Z-buffer también se utiliza (implementado como software en lugar de hardware) para producir efectos especiales generados por computadora para películas. 
 
-## Formula matematica(Proyeccion de perspectiva)
+## Formula matemática(proyección de perspectiva)
 {{< p5-div sketch="/vc/sketches/Matebuffer.js" >}}
 
-## Implementacion
+## Implementación
 ```tpl
 class Shape {
   constructor(vertices) {
@@ -275,3 +275,7 @@ function mouseClicked() {
   bg = random(0, 255);
 }
 {{< /p5-global-iframe >}}
+
+## Referencias 
+
+https://www.davepagurek.com/blog/depth-of-field/
