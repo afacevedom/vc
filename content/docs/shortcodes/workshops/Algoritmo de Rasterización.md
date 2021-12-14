@@ -190,19 +190,13 @@ function Bresenham(line){
 
 function InputScale(){
   Scale = this.value();
-}
+
 function Inputy2(){
   y2 = this.value();
 }
 function Inputx2(){
   x2 = this.value();
 }
-{{< /p5-global-iframe >}
+{{< /p5-global-iframe >
 
-## References
 
-[1] Charalambos Hernandez, J. P. (n.d.). Visual Computing. Visual Computing. Retrieved December 10, 2021, from https://visualcomputing.github.io/vc/docs/workshops/rendering/#tareas
-
-[2] Wikipedia contributors. (2021, August 11). Line drawing algorithm. Wikipedia. Retrieved December 11, 2021, from https://en.wikipedia.org/wiki/Line_drawing_algorithm
-
-[3] xWikipedia contributors. (2021b, November 22). Rasterisation. Wikipedia. Retrieved December 10, 2021, from https://en.wikipedia.org/wiki/Rasterisation#:%7E:text=Rasterization%20(or%20rasterisation)%20is%20the,which%20was%20represented%20via%20shapes).
