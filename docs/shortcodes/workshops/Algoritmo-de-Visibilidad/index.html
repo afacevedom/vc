@@ -2,23 +2,23 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Algoritmo de visibilizacion (Z-Buffer) #  Algoritmo Z-Buffer para el problema de visibilidad
+<meta name=description content="Algoritmo de visibilización (Z-Buffer) #  Algoritmo Z-Buffer para el problema de visibilidad
 El problema de visibilidad es el problema de decidir cuales elementos de una escena son visibles y cuales se &ldquo;esconden&rdquo;.
-Definicion #  Es un tipo de buffer de datos usados en computacion grafica para representar informacion de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos.">
+Definición #  Es un tipo de buffer de datos usados en computación grafica para representar información de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Algoritmo de visibilizacion (Z-Buffer) #  Algoritmo Z-Buffer para el problema de visibilidad
+<meta property="og:description" content="Algoritmo de visibilización (Z-Buffer) #  Algoritmo Z-Buffer para el problema de visibilidad
 El problema de visibilidad es el problema de decidir cuales elementos de una escena son visibles y cuales se &ldquo;esconden&rdquo;.
-Definicion #  Es un tipo de buffer de datos usados en computacion grafica para representar informacion de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos.">
+Definición #  Es un tipo de buffer de datos usados en computación grafica para representar información de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://afacevedom.github.io/vc/docs/shortcodes/workshops/Visibilidad/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-13T21:58:11-05:00">
-<title>Visibilidad | Visual Computing</title>
+<meta property="og:url" content="https://afacevedom.github.io/vc/docs/shortcodes/workshops/Algoritmo-de-Visibilidad/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-12-13T22:25:36-05:00">
+<title>Algoritmo De Visibilidad | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.1068efac0b87b16e7a002975ace19db3af64f44a2042b21acf15f56e3f73b18f.js integrity="sha256-EGjvrAuHsW56ACl1rOGds69k9EogQrIazxX1bj9zsY8=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.7381a92da5507176590993cb51e33478a921e3f06bdad22623473bf32f8d1bce.js integrity="sha256-c4GpLaVQcXZZCZPLUeM0eKkh4/Br2tImI0c78y+NG84=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -108,10 +108,10 @@ Definicion #  Es un tipo de buffer de datos usados en computacion grafica para r
 </label>
 <ul>
 <li>
-<a href=https://afacevedom.github.io/vc/docs/shortcodes/workshops/rendering/>Rendering</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/workshops/Algoritmo-de-Rasterizaci%C3%B3n/>Algoritmo De Rasterización</a>
 </li>
 <li>
-<a href=https://afacevedom.github.io/vc/docs/shortcodes/workshops/Visibilidad/ class=active>Visibilidad</a>
+<a href=https://afacevedom.github.io/vc/docs/shortcodes/workshops/Algoritmo-de-Visibilidad/ class=active>Algoritmo De Visibilidad</a>
 </li>
 </ul>
 </li>
@@ -135,7 +135,7 @@ Blog
 <label for=menu-control>
 <img src=/vc/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Visibilidad</strong>
+<strong>Algoritmo De Visibilidad</strong>
 <label for=toc-control>
 <img src=/vc/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -143,29 +143,30 @@ Blog
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#algoritmo-de-visibilizacion-z-buffer>Algoritmo de visibilizacion (Z-Buffer)</a>
+<li><a href=#algoritmo-de-visibilización-z-buffer>Algoritmo de visibilización (Z-Buffer)</a>
 <ul>
-<li><a href=#definicion>Definicion</a></li>
+<li><a href=#definición>Definición</a></li>
 <li><a href=#usos>Usos</a></li>
-<li><a href=#formula-matematicaproyeccion-de-perspectiva>Formula matematica(Proyeccion de perspectiva)</a></li>
-<li><a href=#implementacion>Implementacion</a></li>
+<li><a href=#formula-matemáticaproyección-de-perspectiva>Formula matemática(proyección de perspectiva)</a></li>
+<li><a href=#implementación>Implementación</a></li>
+<li><a href=#referencias>Referencias</a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown><h1 id=algoritmo-de-visibilizacion-z-buffer>
-Algoritmo de visibilizacion (Z-Buffer)
-<a class=anchor href=#algoritmo-de-visibilizacion-z-buffer>#</a>
+<article class=markdown><h1 id=algoritmo-de-visibilización-z-buffer>
+Algoritmo de visibilización (Z-Buffer)
+<a class=anchor href=#algoritmo-de-visibilizaci%c3%b3n-z-buffer>#</a>
 </h1>
 <p>Algoritmo Z-Buffer para el problema de visibilidad</p>
 <p>El problema de visibilidad es el problema de decidir cuales elementos de una escena son visibles y cuales se &ldquo;esconden&rdquo;.</p>
-<h2 id=definicion>
-Definicion
-<a class=anchor href=#definicion>#</a>
+<h2 id=definición>
+Definición
+<a class=anchor href=#definici%c3%b3n>#</a>
 </h2>
-<p>Es un tipo de buffer de datos usados en computacion grafica para representar informacion de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos.El almacenamiento en búfer Z fue descrito por primera vez en 1974 por Wolfgang Straßer en su tesis doctoral sobre algoritmos rápidos para renderizar objetos ocluidos. Una solución similar para determinar polígonos superpuestos es el algoritmo del pintor , que es capaz de manejar elementos de escena no opacos, aunque a costa de la eficiencia y los resultados incorrectos.</p>
+<p>Es un tipo de buffer de datos usados en computación grafica para representar información de la profundidad de los objetos en un espacio 3D desde una perspectiva particular. Los búferes de profundidad son una ayuda para renderizar una escena para garantizar que los correctos polígonos ocluyan correctamente otros polígonos. El almacenamiento en búfer Z fue descrito por primera vez en 1974 por Wolfgang Straßer en su tesis doctoral sobre algoritmos rápidos para renderizar objetos ocluidos. Una solución similar para determinar polígonos superpuestos es el algoritmo del pintor, que es capaz de manejar elementos de escena no opacos, aunque a costa de la eficiencia y los resultados incorrectos.</p>
 <p>El búfer z tiene la misma estructura de datos interna que una imagen, es decir, una matriz 2d, con la única diferencia de que almacena un valor único para cada píxel de la pantalla en lugar de imágenes en color que usan 3 valores para crear color. Esto hace que el búfer z aparezca en blanco y negro porque no almacena información de color. El búfer tiene las mismas dimensiones que el búfer de pantalla para mantener la coherencia.</p>
 <p>El Z-buffer tiene la misma estructura de datos interna que una imagen, es decir, una matriz 2d, con la única diferencia de que almacena un valor único para cada píxel de la pantalla en lugar de imágenes en color que usan 3 valores para crear color. Esto hace que el búfer z aparezca en blanco y negro porque no almacena información de color. El búfer tiene las mismas dimensiones que el búfer de pantalla para mantener la coherencia.</p>
 <h2 id=usos>
@@ -173,17 +174,17 @@ Usos
 <a class=anchor href=#usos>#</a>
 </h2>
 <p>El Z-buffer es una tecnología utilizada en casi todas las computadoras, portátiles y teléfonos móviles contemporáneos para realizar gráficos de computadora en 3D . El uso principal ahora es para videojuegos, que requieren un procesamiento rápido y preciso de escenas 3D. El Z-buffer se implementa en hardware dentro de las tarjetas gráficas. El Z-buffer también se utiliza (implementado como software en lugar de hardware) para producir efectos especiales generados por computadora para películas.</p>
-<h2 id=formula-matematicaproyeccion-de-perspectiva>
-Formula matematica(Proyeccion de perspectiva)
-<a class=anchor href=#formula-matematicaproyeccion-de-perspectiva>#</a>
+<h2 id=formula-matemáticaproyección-de-perspectiva>
+Formula matemática(proyección de perspectiva)
+<a class=anchor href=#formula-matem%c3%a1ticaproyecci%c3%b3n-de-perspectiva>#</a>
 </h2>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
 <script src=/vc/sketches/Matebuffer.js></script>
 <div id=Matebuffer></div>
-<h2 id=implementacion>
-Implementacion
-<a class=anchor href=#implementacion>#</a>
+<h2 id=implementación>
+Implementación
+<a class=anchor href=#implementaci%c3%b3n>#</a>
 </h2>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tpl data-lang=tpl>class Shape <span style=color:#75715e>{</span>
   <span style=color:#a6e22e>constructor</span><span style=color:#f92672>(</span><span style=color:#a6e22e>vertices</span><span style=color:#f92672>)</span> <span style=color:#75715e>{</span>
@@ -459,10 +460,15 @@ function mouseClicked() {
           </body>
         </html>
       "></iframe>
+<h2 id=referencias>
+Referencias
+<a class=anchor href=#referencias>#</a>
+</h2>
+<p><a href=https://www.davepagurek.com/blog/depth-of-field/>https://www.davepagurek.com/blog/depth-of-field/</a></p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/afacevedom/vc/commit/3e01c4fba8fe61589f3f72ea756f1ed83de40e30 title="Last modified by ccmorenov | December 14, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/afacevedom/vc/commit/f43abd0f248de995246dc14bebf883e1312670e0 title="Last modified by afacevedom | December 14, 2021" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>December 14, 2021</span>
 </a>
@@ -478,12 +484,13 @@ function mouseClicked() {
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#algoritmo-de-visibilizacion-z-buffer>Algoritmo de visibilizacion (Z-Buffer)</a>
+<li><a href=#algoritmo-de-visibilización-z-buffer>Algoritmo de visibilización (Z-Buffer)</a>
 <ul>
-<li><a href=#definicion>Definicion</a></li>
+<li><a href=#definición>Definición</a></li>
 <li><a href=#usos>Usos</a></li>
-<li><a href=#formula-matematicaproyeccion-de-perspectiva>Formula matematica(Proyeccion de perspectiva)</a></li>
-<li><a href=#implementacion>Implementacion</a></li>
+<li><a href=#formula-matemáticaproyección-de-perspectiva>Formula matemática(proyección de perspectiva)</a></li>
+<li><a href=#implementación>Implementación</a></li>
+<li><a href=#referencias>Referencias</a></li>
 </ul>
 </li>
 </ul>
