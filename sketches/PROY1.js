@@ -2,6 +2,7 @@ let imageSet=[],setLuma=[];
 let WIDTH=500,HEIGHT=500;
 var imgMosaic;
 let numImg=31;
+let scl;
 function preload(){
   var img;
   for(var i=1;i<=numImg;i++){
@@ -12,28 +13,25 @@ function preload(){
 }
 
 function setup(){
-  let scl=12;
+  //scl=12;
+  scl=createSlider(1,16,4);
+  scl.position(400,50);
+  scl.style('width','50px');
   createCanvas(imgMosaic.width*2,imgMosaic.height*2);
-  mosaicQuadrille = createQuadrille(10*scl,imgMosaic);
   quadrille = createQuadrille(imageSet);
-  //image(imageSet[5],0,0,WIDTH,HEIGHT);
   quadrille.sort();
-  console.log(quadrille.read(0,1));
-  //drawQuadrille(quadrille,{cellLength:20,pixely:20});
-  //drawQuadrille(mosaicQuadrille, {cellLength: 40 / scl, outlineWeight: 1.6 / scl, outline: color(random(255))});
-  //image(imgMosaic,0,0,500,500);
   for (var j = 0;j<numImg;j++){
     var imgLuma = getLuma(quadrille.read(0,j));
     setLuma.push(imgLuma);
   }
-  console.log("cols: "+10*scl+" rows:"+mosaicQuadrille.size/(10*scl));
-  for(var cx=0;cx<10*scl;cx++){
-    for(var cy=0;cy<mosaicQuadrille.size/(10*scl);cy++){
-      //console.log(mosaicQuadrille.read(cy,cx));
-      //mosaicQuadrille.fill(cy,cx,'a');
+}
+
+
+function draw() {
+  mosaicQuadrille = createQuadrille(10*scl.value(),imgMosaic);
+for(var cx=0;cx<10*scl.value();cx++){
+    for(var cy=0;cy<mosaicQuadrille.size/(10*scl.value());cy++){
        var alum = mosaicQuadrille.read(cy,cx)[0] * 0.299 + mosaicQuadrille.read(cy,cx)[1] * 0.587 + mosaicQuadrille.read(cy,cx)[2] * 0.114;
-      
-      
       var closest = setLuma.reduce(function(prev, curr) {
         return (Math.abs(curr - alum) < Math.abs(prev - alum) ? curr : prev);
       });
@@ -41,16 +39,8 @@ function setup(){
       mosaicQuadrille.fill(cy,cx,imageSet[cell]);
     }
   }
-  
-  
-  drawQuadrille(mosaicQuadrille, {cellLength: 40 / scl, outlineWeight: 1.6 / scl, outline: color(random(255))});
+  drawQuadrille(mosaicQuadrille, {cellLength: 40 / scl.value(), outlineWeight: 1.6 / scl.value(), outline: color(255)});
   image(imgMosaic,400,0,imgMosaic.width/10,imgMosaic.height/10);
-  console.log(setLuma);
-}
-
-
-function draw() {
-
 }
 
 
