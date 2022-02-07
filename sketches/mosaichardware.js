@@ -7,9 +7,9 @@ let cSize=100;
 let pSize=[];
 let capture;
 //API
-let page = Math.floor(Math.random() * 30);
-let apiKey = "W55dn_UlaJ8Qj9DcrGbFHTuNPfVjkNpfsy_kg4gpUPI";
-let url = `https://api.unsplash.com/photos?client_id=${apiKey}&page=${page}&per_page=${numImg}`;
+let page = Math.floor(Math.random() * 100);
+let apiKey = "e534b214d8734140ad84984bd010042c";
+let url = `https://api.rawg.io/api/games?key=${apiKey}&page=${page}&page_size=${numImg}`;
 function preload(){
   var img;
   mosaico = loadShader('/vc/sketches/mosaic.vert', '/vc/sketches/mosaic.frag');
@@ -34,8 +34,8 @@ function setup() {
   capture.hide();
   httpGet(url, 'json', false, async (data) => {
     try {
-      resp = await Promise.all(data.map((value) => 
-                                     getImage(value.urls.regular + "&w=700&h=700")));
+      resp = await Promise.all(data.results.map((value) => 
+                                     getImage(value.background_image )));
     } catch (err) {
       console.log(err);
     }
