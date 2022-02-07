@@ -1,9 +1,8 @@
 let imageSet=[];
-let imgMosaic, numImg=30;
-let resolucion,mosaico,cells;
+let imgMosaic, numImg=50;
+let resolucion,mosaico,cells,sel,pg,video,resp;
 let cSize=100;
 let pSize=[];
-
 
 //API
 let page = Math.floor(Math.random() * 20);
@@ -33,28 +32,40 @@ function setup() {
       console.log(err);
     }
     console.log(resp);
+    //---------------Option selector-------------------
+  sel = createSelect();
+  sel.position(5, 50);
+  sel.option('LUMA');
+  sel.option('AVG');
+  sel.option('ORIGINAL');
+  sel.selected('ORIGINAL');
+  sel.changed(Selected);
   
+
   //cells = createQuadrille(imageSet);
   cells = createQuadrille(resp);
-  cells.sort();
+  //cells.sort();//sort luma
+  /*cells.sort({mode:'AVG'});
   pg= createGraphics(cSize*numImg,cSize);
-  drawQuadrille(cells,{graphics:pg,cellLength: cSize,outlineWeight:0});
+  drawQuadrille(cells,{graphics:pg,cellLength: cSize,outlineWeight:0});*/
   pSize.push(cSize*31);
   pSize.push(cSize);
   
-  mosaico.setUniform('pallete',pg);
   mosaico.setUniform('cellSize',cSize);
   mosaico.setUniform('palleteSize',pSize);
   mosaico.setUniform('cols',numImg);
   
   //mosaico.setUniform('img', imgMosaic);
   mosaico.setUniform('img', random(resp));
+  //mosaico.setUniform('img', video);
   
-  resolucion = createSlider(5, 200, 1, 1);
-  resolucion.position(90, 50);
+  resolucion = createSlider(5, 100, 1, 1);
+  resolucion.position(10, 75);
   resolucion.style('width', '90px');
   resolucion.input(() => mosaico.setUniform('resolucion', resolucion.value()));
   mosaico.setUniform('resolucion', resolucion.value());
+  
+  
   });
 }
 
@@ -65,14 +76,34 @@ function draw() {
     //cover(true);
 }
 
-function cover(texture = false) {
-  beginShape();
-  vertex(-width / 2, -height / 2, 0, 0, 0);
-  vertex(width / 2, -height / 2, 0, texture ? 1 : 0, 0);
-  vertex(width / 2, height / 2, 0, texture ? 1 : 0, texture ? 1 : 0);
-  vertex(-width / 2, height / 2, 0, 0, texture ? 1 : 0);
-  endShape(CLOSE);
+function Selected() {
+  let item = sel.value();
+  let val;
+  if(item === "LUMA"){
+    val = 1;
+    PalleteCells(item);
+  }else if(item === "AVG"){
+    val = 2;
+    PalleteCells(item);
+  }else{
+    val = 3;
+  } 
+  mosaico.setUniform('option', val);
 }
+
+
+function PalleteCells(mode){
+  if(mode=="LUMA"){
+    cells.sort();
+  }else{
+    cells.sort({mode:'AVG'});
+  }
+  pg= createGraphics(cSize*numImg,cSize);
+  drawQuadrille(cells,{graphics:pg,cellLength: cSize,outlineWeight:0});
+  mosaico.setUniform('pallete',pg);
+}
+
+
 function getImage (url) {
   return new Promise(function (resolve, reject) {
     loadImage(url, (result) => {
