@@ -15,7 +15,7 @@ function preload(){
 function setup(){
   //scl=12;
   scl=createSlider(1,16,4);
-  scl.position(400,50);
+  scl.position(510,150);
   scl.style('width','50px');
   createCanvas(imgMosaic.width*2,imgMosaic.height*2);
   quadrille = createQuadrille(imageSet);
@@ -39,8 +39,8 @@ for(var cx=0;cx<10*scl.value();cx++){
       mosaicQuadrille.fill(cy,cx,imageSet[cell]);
     }
   }
-  drawQuadrille(mosaicQuadrille, {cellLength: 40 / scl.value(), outlineWeight: 1.6 / scl.value(), outline: color(255)});
-  image(imgMosaic,400,0,imgMosaic.width/10,imgMosaic.height/10);
+  drawQuadrille(mosaicQuadrille, {cellLength: 50 / scl.value(), outlineWeight: 0, outline: color(255)});
+  image(imgMosaic,500,0,imgMosaic.width/10,imgMosaic.height/10);
 }
 
 
