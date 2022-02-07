@@ -49,6 +49,7 @@ void main() {
   texCoord = texCoord/vec2(resolucion);
 
   vec4 imgTexel = texture2D(img, texCoord);
+  
   //vec2 PalCoord = vec2((floor(luma(imgTexel.rgb)*cols)+cPos.s)/cols,cPos.t);
   //vec2 PalCoord = vec2((floor(avg(imgTexel.rgb)*cols)+cPos.s)/cols,cPos.t);
   //vec4 PalTexel = texture2D(pallete,PalCoord);
