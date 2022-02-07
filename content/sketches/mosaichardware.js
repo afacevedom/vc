@@ -1,11 +1,14 @@
+
+
 let imageSet=[];
-let imgMosaic, numImg=50;
+let imgMosaic, numImg=30;
 let resolucion,mosaico,cells,sel,pg,video,resp;
 let cSize=100;
 let pSize=[];
 
+
 //API
-let page = Math.floor(Math.random() * 20);
+let page = Math.floor(Math.random() * 30);
 let apiKey = "W55dn_UlaJ8Qj9DcrGbFHTuNPfVjkNpfsy_kg4gpUPI";
 let url = `https://api.unsplash.com/photos?client_id=${apiKey}&page=${page}&per_page=${numImg}`;
 function preload(){
@@ -24,6 +27,7 @@ function setup() {
   textureMode(NORMAL);
   noStroke();
   shader(mosaico);
+  numImg =numImg-1;
   httpGet(url, 'json', false, async (data) => {
     try {
       resp = await Promise.all(data.map((value) => 
@@ -98,7 +102,7 @@ function PalleteCells(mode){
   }else{
     cells.sort({mode:'AVG'});
   }
-  pg= createGraphics(cSize*numImg,cSize);
+  pg= createGraphics(cSize*numImg-1,cSize);
   drawQuadrille(cells,{graphics:pg,cellLength: cSize,outlineWeight:0});
   mosaico.setUniform('pallete',pg);
 }
