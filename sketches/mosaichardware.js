@@ -2,11 +2,10 @@
 
 let imageSet=[];
 let imgMosaic, numImg=30;
-let resolucion,mosaico,cells,sel,pg,video,resp;
+let resolucion,mosaico,cells,sel,pg,resp,src,video;
 let cSize=100;
 let pSize=[];
-
-
+let capture;
 //API
 let page = Math.floor(Math.random() * 30);
 let apiKey = "W55dn_UlaJ8Qj9DcrGbFHTuNPfVjkNpfsy_kg4gpUPI";
@@ -27,7 +26,12 @@ function setup() {
   textureMode(NORMAL);
   noStroke();
   shader(mosaico);
-  numImg =numImg-1;
+  video = createVideo(['/vc/sketches/Video.mp4']);
+  
+  video.volume(0);
+  video.hide();
+  capture = createCapture(VIDEO);
+  capture.hide();
   httpGet(url, 'json', false, async (data) => {
     try {
       resp = await Promise.all(data.map((value) => 
@@ -44,14 +48,19 @@ function setup() {
   sel.option('ORIGINAL');
   sel.selected('ORIGINAL');
   sel.changed(Selected);
+  //---------------Source selector-------------------
+  src = createSelect();
+  src.position(5, 30);
+  src.option('IMAGE');
+  src.option('VIDEO');
+  src.option('CAM');
+  src.selected('IMAGE');
+  src.changed(SourceSelected);
   
-
+  
   //cells = createQuadrille(imageSet);
   cells = createQuadrille(resp);
-  //cells.sort();//sort luma
-  /*cells.sort({mode:'AVG'});
-  pg= createGraphics(cSize*numImg,cSize);
-  drawQuadrille(cells,{graphics:pg,cellLength: cSize,outlineWeight:0});*/
+  
   pSize.push(cSize*31);
   pSize.push(cSize);
   
@@ -61,14 +70,14 @@ function setup() {
   
   //mosaico.setUniform('img', imgMosaic);
   mosaico.setUniform('img', random(resp));
-  //mosaico.setUniform('img', video);
+  //mosaico.setUniform('img', capture);
   
   resolucion = createSlider(5, 100, 1, 1);
   resolucion.position(10, 75);
   resolucion.style('width', '90px');
   resolucion.input(() => mosaico.setUniform('resolucion', resolucion.value()));
   mosaico.setUniform('resolucion', resolucion.value());
-  
+  video.loop();
   
   });
 }
@@ -93,6 +102,17 @@ function Selected() {
     val = 3;
   } 
   mosaico.setUniform('option', val);
+}
+
+function SourceSelected() {
+  let item = src.value();
+  if(item === "VIDEO"){
+    mosaico.setUniform('img',video);
+  }else if(item === "CAM"){
+    mosaico.setUniform('img',capture);
+  }else{
+    mosaico.setUniform('img', random(resp));
+  } 
 }
 
 
