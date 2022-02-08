@@ -49,4 +49,7 @@ Los web crawlers son especialmente importantes para la optimización de motores 
     https://hmong.es/wiki/Software_rendering
     https://es.wikipedia.org/wiki/Sombreador
     https://www.ionos.es/digitalguide/online-marketing/marketing-para-motores-de-busqueda/que-es-un-web-crawler/
+    https://api.rawg.io/docs/#tag/games
+    https://visualcomputing.github.io/
+
 {{< /hint >}}
