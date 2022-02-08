@@ -13,7 +13,7 @@
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.5f22953dc83d250742f0ce77e638602be0d1053d81d6b633471c2501d868c597.js integrity="sha256-XyKVPcg9JQdC8M535jhgK+DRBT2B1rYzRxwlAdhoxZc=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.0648abfa24c68691e3116b088a9d910769eab3f4c1feb0fe1c21fbbd95246469.js integrity="sha256-Bkir+iTGhpHjEWsIip2RB2nqs/TB/rD+HCH7vZUkZGk=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://afacevedom.github.io/vc/docs/shortcodes/Workshop-Final-Shaders/index.xml title="Visual Computing">
 </head>
 <body dir=ltr>
@@ -153,11 +153,7 @@ Blog
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#workshops---shaders>Workshops - Shaders</a>
-<ul>
-<li><a href=#referencias>Referencias</a></li>
-</ul>
-</li>
+<li><a href=#workshops---shaders>Workshops - Shaders</a></li>
 </ul>
 </nav>
 </aside>
@@ -180,15 +176,42 @@ Fotomosaico Hardware
 Fotomosaico Software
 </a>
 </p>
+<details><summary>Renderización por software</summary>
+<div class=markdown-inner>
+La renderización por software es el proceso de generar una imagen a partir de un modelo por medio de un software de computadora. En el contexto del renderizado de gráficos por computadora , el renderizado de software se refiere a un proceso de renderizado que no depende de los ASIC de hardware de gráficos , como una tarjeta gráfica . La renderización se lleva a cabo íntegramente en la CPU . Renderizar todo con la CPU (de uso general) tiene la principal ventaja de que no está restringido a las capacidades (limitadas) del hardware de gráficos, sino la desventaja de que se necesitan más semiconductores para obtener la misma velocidad.
+</div>
+</details>
+<details><summary>Shader</summary>
+<div class=markdown-inner>
+<p>En el ámbito de los gráficos por ordenador, un sombreador es un tipo de programa informático que se utilizaba originalmente para el sombreado de escenas 3D (la producción de niveles adecuados de luz, oscuridad y color en una imagen renderizada). En la actualidad, realizan una serie de funciones especializadas en diversos campos dentro de la categoría de efectos especiales de los gráficos por ordenador, o bien realizan un posprocesamiento de vídeo no relacionado con el sombreado, o incluso realizan funciones no relacionadas con los gráficos.</p>
+<p>Los sombreadores tradicionales calculan los efectos de renderizado en el hardware de gráficos con un alto grado de flexibilidad. La mayoría de los sombreadores se codifican para (y se ejecutan en) una unidad de procesamiento gráfico (GPU), aunque esto no es un requisito estricto. Los lenguajes de sombreado se utilizan para programar el canal de renderizado de la GPU, que ha sustituido en su mayor parte al canal de funciones fijas del pasado, que sólo permitía las funciones comunes de transformación de la geometría y sombreado de píxeles; con los sombreadores, se pueden utilizar efectos personalizados. La posición y el color (matiz, saturación, brillo y contraste) de todos los píxeles, vértices y/o texturas utilizados para construir una imagen final renderizada pueden ser alterados mediante algoritmos definidos en un sombreador, y pueden ser modificados por variables o texturas externas introducidas por el programa informático que llama al sombreador[cita requerida].</p>
+<p>Los sombreadores se utilizan ampliamente en el postprocesamiento cinematográfico, en las imágenes generadas por ordenador y en los videojuegos para producir una serie de efectos. Más allá de los modelos de iluminación simples, los usos más complejos de los sombreadores incluyen: la alteración del tono, la saturación, el brillo (HSL/HSV) o el contraste de una imagen; la producción de desenfoque, el florecimiento de la luz, la iluminación volumétrica, el mapeo normal (para efectos de profundidad), el bokeh, el cel shading, la posterización, el mapeo de bump, la distorsión, el croma (para los efectos llamados &ldquo;bluescreen/greenscreen&rdquo;), la detección de bordes y de movimiento, así como los efectos psicodélicos como los que se ven en la demoscene.</p>
+</div>
+</details>
+<details><summary>Webcrawler</summary>
+<div class=markdown-inner>
+<p>Los web crawlers son bots que buscan datos en Internet, analizan el contenido y guardan la información en índices y bases de datos para mejorar el rendimiento de los motores de búsqueda. Además, las arañas web recopilan datos de contacto y perfiles con fines de marketing.</p>
+<p>Como estos bots de motores de búsqueda se mueven de forma tan precisa por todas las ramificaciones de Internet en busca de información, en español se los conoce como arañas web orastreadores web. El primer web crawler se llamaba World Wide Web Wanderer y se basaba en el lenguaje de programación PERL. Este rastreador, implementado en 1993, medía el crecimiento del entonces todavía joven Internet y organizaba los datos recopilados en Wandex, el primer índice de Internet.</p>
+<p>En 1994, al World Wide Web Wanderer le siguió el primer navegador, llamado Webcrawler, el motor de búsqueda más antiguo que aún existe en la actualidad. Gracias a las arañas web, los motores de búsqueda pueden mantener sus bases de datos actualizadas automáticamente, añadiendo nuevo contenido y sitios web al índice y eliminando el contenido obsoleto.</p>
+<p>Los web crawlers son especialmente importantes para la optimización de motores de búsqueda o SEO (del inglés search engine optimization). Para las empresas, es fundamental familiarizarse con los diferentes tipos y funciones de arañas web para poder ofrecer un contenido optimizado para SEO en línea.</p>
+</div>
+</details>
+<blockquote class="book-hint info">
 <h2 id=referencias>
 Referencias
 <a class=anchor href=#referencias>#</a>
 </h2>
-<p><a href=https://es.wikipedia.org/wiki/Fotomosaico>https://es.wikipedia.org/wiki/Fotomosaico</a></p>
+<pre><code>https://thebookofshaders.com/?lan=es
+https://es.wikipedia.org/wiki/Fotomosaico
+https://hmong.es/wiki/Software_rendering
+https://es.wikipedia.org/wiki/Sombreador
+https://www.ionos.es/digitalguide/online-marketing/marketing-para-motores-de-busqueda/que-es-un-web-crawler/
+</code></pre>
+</blockquote>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/afacevedom/vc/commit/fce9cb52b0113b6f2ed79c9f0de2619bd14e3ffd title="Last modified by afacevedom | February 8, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/afacevedom/vc/commit/618799768e7fd832d549d4935e984e228c48edc7 title="Last modified by afacevedom | February 8, 2022" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 8, 2022</span>
 </a>
@@ -204,11 +227,7 @@ Referencias
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#workshops---shaders>Workshops - Shaders</a>
-<ul>
-<li><a href=#referencias>Referencias</a></li>
-</ul>
-</li>
+<li><a href=#workshops---shaders>Workshops - Shaders</a></li>
 </ul>
 </nav>
 </div>
