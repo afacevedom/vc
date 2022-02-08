@@ -36,15 +36,12 @@ vec2 palleteCell(float cellS,float cellPos){
 
 void main() {
 
-  float w = cellSize;//Tamaño celda
-
-  float dx = palleteSize.x/w;//Normalizar paleta
    
   vec2 cPos = vTexCoord * resolucion;
 
-  vec2 texCoord = floor(cPos);//MUestreada
+  vec2 texCoord = floor(cPos);//Muestreada
 
-  cPos = cPos - texCoord;
+  cPos = cPos - texCoord;//Normalizar 
 
   texCoord = texCoord/vec2(resolucion);
 
@@ -58,7 +55,6 @@ void main() {
   //gl_FragColor = texture2D(img, vTexCoord); //Original
   //gl_FragColor = imgTexel; //pixelated
   //gl_FragColor = PalTexel;
-  //gl_FragColor = color_on ? all(equal(paletteTexel, foreground)) ? key : background : paletteTexel;
 
   //gl_FragColor = texture2D(img, vTexCoord);
   if(option==2){
